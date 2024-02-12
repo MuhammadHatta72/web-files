@@ -30,4 +30,9 @@
             <i class="fas fa-file"></i><span>Arsip Advance</span>
         </a>
     </li>
+    <li class="nav-item {{ request()->is('*travel_authorizations*') ? 'active' : '' }}">
+        <a href="{{ route('travel_authorizations.index') }}" class="nav-link">
+            <i class="fas fa-file"></i><span>Travel Authorization</span>
+        </a>
+    </li>
 @endsection

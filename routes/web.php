@@ -8,6 +8,7 @@ use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\ArsipTravelController;
 use App\Http\Controllers\ArsipExpenReportController;
 use App\Http\Controllers\ArsipAdvanceController;
+use App\Http\Controllers\TravelAuthorizationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,4 +59,6 @@ Route::middleware('can:admin')->group(function () {
     Route::resource('arsip_travels', ArsipTravelController::class);
     Route::resource('arsip_expen_reports', ArsipExpenReportController::class);
     Route::resource('arsip_advances', ArsipAdvanceController::class);
+    Route::resource('travel_authorizations', TravelAuthorizationController::class);
+    Route::get('print_travel_authorization/{id}', [TravelAuthorizationController::class, 'print'])->name('print_travel_authorization');
 });
