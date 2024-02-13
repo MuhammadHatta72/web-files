@@ -61,4 +61,6 @@ Route::middleware('can:admin')->group(function () {
     Route::resource('arsip_advances', ArsipAdvanceController::class);
     Route::resource('travel_authorizations', TravelAuthorizationController::class);
     Route::get('print_travel_authorization/{id}', [TravelAuthorizationController::class, 'print'])->name('print_travel_authorization');
+    Route::get('print_all_travel_authorization', [TravelAuthorizationController::class, 'printAll'])->name('print_all_travel_authorization');
+    Route::get('export_travel_authorization', [TravelAuthorizationController::class, 'export'])->name('export_travel_authorization');
 });

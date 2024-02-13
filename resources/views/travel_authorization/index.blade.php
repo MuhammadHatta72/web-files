@@ -39,8 +39,18 @@
                             <h4>Data Travel Authorization</h4>
                         </div>
                         <div class="card-body">
+                            <div class="float-left mb-3">
+                                <a class="btn btn-success border-0 text-white" href="{{ route('export_travel_authorization') }}">
+                                    <i class="fas fa-print"></i>
+                                    Excel
+                                </a>
+                                <a class="btn btn-danger border-0 text-white" href="{{ route('print_all_travel_authorization') }}">
+                                    <i class="fas fa-print"></i>
+                                    PDF
+                                </a>
+                            </div>
                             <div class="float-right mb-3">
-                                <a class="btn btn-success border-0 text-white createBtn" href="{{ route('travel_authorizations.create') }}">
+                                <a class="btn btn-primary border-0 text-white createBtn" href="{{ route('travel_authorizations.create') }}">
                                     <i class="fas fa-plus"></i>
                                     Tambah Travel Authorization
                                 </a>
@@ -58,6 +68,7 @@
                                             <th class="text-center">Start Date</th>
                                             <th class="text-center">End Date</th>
                                             <th class="text-center">Status</th>
+                                            <th class="text-center">Total</th>
                                             <th class="text-center">Action</th>
                                         </tr>
                                     </thead>
@@ -73,6 +84,9 @@
                                                 <td>{{ $travel_authorization->end_date }}</td>
                                                 <td>
                                                     <span class="badge badge-warning">{{ $travel_authorization->status }}</span>
+                                                </td>
+                                                <td>
+                                                    Rp. {{ number_format($travel_authorization->bn_price_1 + $travel_authorization->bn_price_2 + $travel_authorization->bn_price_3 + $travel_authorization->bn_price_4 + $travel_authorization->total_airfare + $travel_authorization->hotel_price_1 + $travel_authorization->hotel_price_2, 0, ',', '.') }}
                                                 </td>
                                                 <td class="d-flex justify-content-center gap-1 align-items-center">
                                                     <a class="btn btn-warning text-white showBtn"

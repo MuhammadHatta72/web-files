@@ -60,7 +60,7 @@
                                 <div>
                                     <label class="form-label mt-2"><b>Data Traveller</b></label>
                                     <div class="row">
-                                        <div class="col-md-2 mb-1">
+                                        <div class="col-md-1 mb-1">
                                             <label for="bn" class="form-label"><b>BN 1</b></label>
                                             <p>{{ $travelAuthorization->bn_1 }}</p>
                                         </div>
@@ -76,13 +76,17 @@
                                             <label for="bn" class="form-label"><b>Charge To 1</b></label>
                                             <p>{{ $travelAuthorization->charge_1 }}</p>
                                         </div>
-                                        <div class="col-md-3 mb-1">
+                                        <div class="col-md-2 mb-1">
                                             <label for="bn" class="form-label"><b>Passport 1</b></label>
                                             <p>{{ $travelAuthorization->passport_1 }}</p>
                                         </div>
+                                        <div class="col-md-2 mb-1">
+                                            <label for="bn" class="form-label"><b>Total BN 1</b></label>
+                                            <p>Rp. {{ number_format($travelAuthorization->bn_price_1, 0, ',', '.') }}</p>
+                                        </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-2 mb-1">
+                                        <div class="col-md-1 mb-1">
                                             <label for="bn" class="form-label"><b>BN 2</b></label>
                                             <p>{{ $travelAuthorization->bn_2 }}</p>
                                         </div>
@@ -98,13 +102,17 @@
                                             <label for="bn" class="form-label"><b>Charge To 2</b></label>
                                             <p>{{ $travelAuthorization->charge_2 }}</p>
                                         </div>
-                                        <div class="col-md-3 mb-1">
+                                        <div class="col-md-2 mb-1">
                                             <label for="bn" class="form-label"><b>Passport 2</b></label>
                                             <p>{{ $travelAuthorization->passport_2 }}</p>
                                         </div>
+                                        <div class="col-md-2 mb-1">
+                                            <label for="bn" class="form-label"><b>Total BN 2</b></label>
+                                            <p>Rp. {{ number_format($travelAuthorization->bn_price_2, 0, ',', '.') }}</p>
+                                        </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-2 mb-1">
+                                        <div class="col-md-1 mb-1">
                                             <label for="bn" class="form-label"><b>BN 3</b></label>
                                             <p>{{ $travelAuthorization->bn_3 }}</p>
                                         </div>
@@ -120,13 +128,17 @@
                                             <label for="bn" class="form-label"><b>Charge To 3</b></label>
                                             <p>{{ $travelAuthorization->charge_3 }}</p>
                                         </div>
-                                        <div class="col-md-3 mb-1">
+                                        <div class="col-md-2 mb-1">
                                             <label for="bn" class="form-label"><b>Passport 3</b></label>
                                             <p>{{ $travelAuthorization->passport_3 }}</p>
                                         </div>
+                                        <div class="col-md-2 mb-1">
+                                            <label for="bn" class="form-label"><b>Total BN 3</b></label>
+                                            <p>Rp. {{ number_format($travelAuthorization->bn_price_3, 0, ',', '.') }}</p>
+                                        </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-2 mb-1">
+                                        <div class="col-md-1 mb-1">
                                             <label for="bn" class="form-label"><b>BN 4</b></label>
                                             <p>{{ $travelAuthorization->bn_4 }}</p>
                                         </div>
@@ -142,9 +154,13 @@
                                             <label for="bn" class="form-label"><b>Charge To 4</b></label>
                                             <p>{{ $travelAuthorization->charge_4 }}</p>
                                         </div>
-                                        <div class="col-md-3 mb-1">
+                                        <div class="col-md-2 mb-1">
                                             <label for="bn" class="form-label"><b>Passport 4</b></label>
                                             <p>{{ $travelAuthorization->passport_4 }}</p>
+                                        </div>
+                                        <div class="col-md-2 mb-1">
+                                            <label for="bn" class="form-label"><b>Total BN 4</b></label>
+                                            <p>Rp. {{ number_format($travelAuthorization->bn_price_4, 0, ',', '.') }}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -211,7 +227,7 @@
                                 <div class="col-md-12 mb-1">
                                     <div class="mb-2">
                                         <label for="purpose" class="form-label"><b>Total Price</b></label>
-                                        <p>Rp. {{ number_format($travelAuthorization->total_airfare + $travelAuthorization->hotel_price_1 + $travelAuthorization->hotel_price_2, 0, ',', '.') }}</p>
+                                        <p>Rp. {{ number_format($travelAuthorization->bn_price_1 + $travelAuthorization->bn_price_2 + $travelAuthorization->bn_price_3 + $travelAuthorization->bn_price_4 + $travelAuthorization->total_airfare + $travelAuthorization->hotel_price_1 + $travelAuthorization->hotel_price_2, 0, ',', '.') }}</p>
                                     </div>
                                 </div>
                                 <div>

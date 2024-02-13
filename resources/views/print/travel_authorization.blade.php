@@ -79,6 +79,7 @@
             <td style="text-align: center;">Departement</td>
             <td style="text-align: center;">Charge To</td>
             <td style="text-align: center;">Passport</td>
+            <td style="text-align: center;">Total Price</td>
         </tr>
         <tr>
             <td style="text-align: center;">{{ $travelAuthorization->bn_1 }}</td>
@@ -86,6 +87,7 @@
             <td style="text-align: center;">{{ $travelAuthorization->departement_1 }}</td>
             <td style="text-align: center;">{{ $travelAuthorization->charge_1 }}</td>
             <td style="text-align: center;">{{ $travelAuthorization->passport_1 }}</td>
+            <td style="text-align: center;">Rp. {{ number_format($travelAuthorization->bn_price_1, 0, ',', '.') }}</td>
         </tr>
         <tr>
             <td style="text-align: center;">{{ $travelAuthorization->bn_2 }}</td>
@@ -93,6 +95,7 @@
             <td style="text-align: center;">{{ $travelAuthorization->departement_2 }}</td>
             <td style="text-align: center;">{{ $travelAuthorization->charge_2 }}</td>
             <td style="text-align: center;">{{ $travelAuthorization->passport_2 }}</td>
+            <td style="text-align: center;">Rp. {{ number_format($travelAuthorization->bn_price_2, 0, ',', '.') }}</td>
         </tr>
         <tr>
             <td style="text-align: center;">{{ $travelAuthorization->bn_3 }}</td>
@@ -100,6 +103,7 @@
             <td style="text-align: center;">{{ $travelAuthorization->departement_3 }}</td>
             <td style="text-align: center;">{{ $travelAuthorization->charge_3 }}</td>
             <td style="text-align: center;">{{ $travelAuthorization->passport_3 }}</td>
+            <td style="text-align: center;">Rp. {{ number_format($travelAuthorization->bn_price_3, 0, ',', '.') }}</td>
         </tr>
         <tr>
             <td style="text-align: center;">{{ $travelAuthorization->bn_4 }}</td>
@@ -107,6 +111,7 @@
             <td style="text-align: center;">{{ $travelAuthorization->departement_4 }}</td>
             <td style="text-align: center;">{{ $travelAuthorization->charge_4 }}</td>
             <td style="text-align: center;">{{ $travelAuthorization->passport_4 }}</td>
+            <td style="text-align: center;">Rp. {{ number_format($travelAuthorization->bn_price_4, 0, ',', '.') }}</td>
         </tr>
     </table>
     <div class="titleSecSec">
@@ -119,7 +124,7 @@
         </tr>
         <tr>
             <td style="text-align: center;">{{ $travelAuthorization->aircraft_name }}</td>
-            <td style="text-align: center;">{{ $travelAuthorization->total_airfare }}</td>
+            <td style="text-align: center;">Rp. {{ number_format($travelAuthorization->total_airfare, 0, ',', '.') }}</td>
         </tr>
     </table>
     <div class="titleSecSec">
@@ -134,17 +139,24 @@
             <td style="text-align: center;">Hotel Price</td>
         </tr>
         <tr>
-            <td style="text-align: center;">{{ $travelAuthorization->bn_1 }}</td>
-            <td style="text-align: center;">{{ $travelAuthorization->bn_name_1 }}</td>
-            <td style="text-align: center;">{{ $travelAuthorization->departement_1 }}</td>
-            <td style="text-align: center;">{{ $travelAuthorization->charge_1 }}</td>
-            <td style="text-align: center;">{{ $travelAuthorization->passport_1 }}</td>
+            <td style="text-align: center;">{{ $travelAuthorization->hotel_name_1 }}</td>
+            <td style="text-align: center;">{{ $travelAuthorization->city_1 }}</td>
+            <td style="text-align: center;">{{ $travelAuthorization->checkin_date_1 }}</td>
+            <td style="text-align: center;">{{ $travelAuthorization->checkout_date_1 }}</td>
+            <td style="text-align: center;">Rp. {{ number_format($travelAuthorization->hotel_price_1, 0, ',', '.') }}</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">{{ $travelAuthorization->hotel_name_2 }}</td>
+            <td style="text-align: center;">{{ $travelAuthorization->city_2 }}</td>
+            <td style="text-align: center;">{{ $travelAuthorization->checkin_date_2 }}</td>
+            <td style="text-align: center;">{{ $travelAuthorization->checkout_date_2 }}</td>
+            <td style="text-align: center;">Rp. {{ number_format($travelAuthorization->hotel_price_2, 0, ',', '.') }}</td>
         </tr>
     </table>
     <table width="100%" style="margin-top: 10px; background:#DCF2F1;" border="1">
         <tr>
             <td style="text-align: left;">Total Prices</td>
-            <td style="text-align: left;">Rp. {{ number_format($travelAuthorization->total_airfare + $travelAuthorization->hotel_price_1 + $travelAuthorization->hotel_price_2, 0, ',', '.') }}</td>
+            <td style="text-align: left;">Rp. {{ number_format($travelAuthorization->bn_price_1 + $travelAuthorization->bn_price_2 + $travelAuthorization->bn_price_3 + $travelAuthorization->bn_price_4 + $travelAuthorization->total_airfare + $travelAuthorization->hotel_price_1 + $travelAuthorization->hotel_price_2, 0, ',', '.') }}</td>
         </tr>
     </table>
 </body>

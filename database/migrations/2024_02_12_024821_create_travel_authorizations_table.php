@@ -27,21 +27,25 @@ return new class extends Migration
             $table->string('departement_1')->nullable();
             $table->string('charge_1')->nullable();
             $table->string('passport_1')->nullable();
+            $table->string('bn_price_1')->nullable();
             $table->string('bn_2')->nullable();
             $table->string('bn_name_2')->nullable();
             $table->string('departement_2')->nullable();
             $table->string('charge_2')->nullable();
             $table->string('passport_2')->nullable();
+            $table->string('bn_price_2')->nullable();
             $table->string('bn_3')->nullable();
             $table->string('bn_name_3')->nullable();
             $table->string('departement_3')->nullable();
             $table->string('charge_3')->nullable();
             $table->string('passport_3')->nullable();
+            $table->string('bn_price_3')->nullable();
             $table->string('bn_4')->nullable();
             $table->string('bn_name_4')->nullable();
             $table->string('departement_4')->nullable();
             $table->string('charge_4')->nullable();
             $table->string('passport_4')->nullable();
+            $table->string('bn_price_4')->nullable();
             //data flight
             $table->string('aircraft_name')->nullable();
             $table->string('total_airfare')->nullable();

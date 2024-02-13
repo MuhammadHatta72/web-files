@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\TravelAuthorization;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\TravelAuthorizationExport;
 
 class TravelAuthorizationController extends Controller
 {
@@ -130,21 +132,25 @@ class TravelAuthorizationController extends Controller
         $travelAuthorization->departement_1 = $request->departement_1 ?? null;
         $travelAuthorization->charge_1 = $request->charge_1 ?? null;
         $travelAuthorization->passport_1 = $request->passport_1 ?? null;
+        $travelAuthorization->bn_price_1 = $request->bn_price_1 ?? null;
         $travelAuthorization->bn_2 = $request->bn_2 ?? null;
         $travelAuthorization->bn_name_2 = $request->bn_name_2 ?? null;
         $travelAuthorization->departement_2 = $request->departement_2 ?? null;
         $travelAuthorization->charge_2 = $request->charge_2 ?? null;
         $travelAuthorization->passport_2 = $request->passport_2 ?? null;
+        $travelAuthorization->bn_price_2 = $request->bn_price_2 ?? null;
         $travelAuthorization->bn_3 = $request->bn_3 ?? null;
         $travelAuthorization->bn_name_3 = $request->bn_name_3 ?? null;
         $travelAuthorization->departement_3 = $request->departement_3 ?? null;
         $travelAuthorization->charge_3 = $request->charge_3 ?? null;
         $travelAuthorization->passport_3 = $request->passport_3 ?? null;
+        $travelAuthorization->bn_price_3 = $request->bn_price_3 ?? null;
         $travelAuthorization->bn_4 = $request->bn_4 ?? null;
         $travelAuthorization->bn_name_4 = $request->bn_name_4 ?? null;
         $travelAuthorization->departement_4 = $request->departement_4 ?? null;
         $travelAuthorization->charge_4 = $request->charge_4 ?? null;
         $travelAuthorization->passport_4 = $request->passport_4 ?? null;
+        $travelAuthorization->bn_price_4 = $request->bn_price_4 ?? null;
         $travelAuthorization->aircraft_name = $request->aircraft_name ?? null;
         $travelAuthorization->total_airfare = $request->total_airfare ?? null;
         $travelAuthorization->hotel_name_1 = $request->hotel_name_1 ?? null;
@@ -280,21 +286,25 @@ class TravelAuthorizationController extends Controller
         $travelAuthorization->departement_1 = $request->departement_1 ?? null;
         $travelAuthorization->charge_1 = $request->charge_1 ?? null;
         $travelAuthorization->passport_1 = $request->passport_1 ?? null;
+        $travelAuthorization->bn_price_1 = $request->bn_price_1 ?? null;
         $travelAuthorization->bn_2 = $request->bn_2 ?? null;
         $travelAuthorization->bn_name_2 = $request->bn_name_2 ?? null;
         $travelAuthorization->departement_2 = $request->departement_2 ?? null;
         $travelAuthorization->charge_2 = $request->charge_2 ?? null;
         $travelAuthorization->passport_2 = $request->passport_2 ?? null;
+        $travelAuthorization->bn_price_2 = $request->bn_price_2 ?? null;
         $travelAuthorization->bn_3 = $request->bn_3 ?? null;
         $travelAuthorization->bn_name_3 = $request->bn_name_3 ?? null;
         $travelAuthorization->departement_3 = $request->departement_3 ?? null;
         $travelAuthorization->charge_3 = $request->charge_3 ?? null;
         $travelAuthorization->passport_3 = $request->passport_3 ?? null;
+        $travelAuthorization->bn_price_3 = $request->bn_price_3 ?? null;
         $travelAuthorization->bn_4 = $request->bn_4 ?? null;
         $travelAuthorization->bn_name_4 = $request->bn_name_4 ?? null;
         $travelAuthorization->departement_4 = $request->departement_4 ?? null;
         $travelAuthorization->charge_4 = $request->charge_4 ?? null;
         $travelAuthorization->passport_4 = $request->passport_4 ?? null;
+        $travelAuthorization->bn_price_4 = $request->bn_price_4 ?? null;
         $travelAuthorization->aircraft_name = $request->aircraft_name ?? null;
         $travelAuthorization->total_airfare = $request->total_airfare ?? null;
         $travelAuthorization->hotel_name_1 = $request->hotel_name_1 ?? null;
@@ -326,5 +336,18 @@ class TravelAuthorizationController extends Controller
         $travelAuthorization = TravelAuthorization::findOrFail($id);
         $pdf = PDF::loadView('print.travel_authorization', compact('travelAuthorization'));
         return $pdf->stream();
+    }
+
+    public function printAll()
+    {
+        $travel_authorizations = TravelAuthorization::all();
+        $pdf = PDF::loadView('print.travel_authorizations', compact('travel_authorizations'));
+        $pdf->setPaper('F4', 'landscape');
+        return $pdf->stream();
+    }
+
+    public function export()
+    {
+        return Excel::download(new TravelAuthorizationExport, 'travel authorizations.xlsx');
     }
 }

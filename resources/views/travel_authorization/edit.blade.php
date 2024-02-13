@@ -157,7 +157,7 @@
                                             </div>
                                         @enderror
                                     </div>
-                                    <div class="col-md-4 mb-3">
+                                    <div class="col-md-3 mb-3">
                                         <label for="bn_name_1" class="form-label">Nama BN</label>
                                         <input type="text" class="form-control @error('bn_name_1') is-invalid @enderror"
                                             id="bn_name_1" name="bn_name_1" value="{{ $travelAuthorization->bn_name_1 }}" />
@@ -187,11 +187,21 @@
                                             </div>
                                         @enderror
                                     </div>
-                                    <div class="col-md-3 mb-3">
+                                    <div class="col-md-2 mb-3">
                                         <label for="passport_1" class="form-label">Passport</label>
                                         <input type="text" class="form-control @error('passport_1') is-invalid @enderror"
                                             id="passport_1" name="passport_1" value="{{ $travelAuthorization->passport_1 }}" />
                                         @error('passport_1')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                    <div class="col-md-2 mb-3">
+                                        <label for="bn_price_1" class="form-label">Total BN</label>
+                                        <input type="number" class="form-control @error('bn_price_1') is-invalid @enderror"
+                                            id="bn_price_1" name="bn_price_1" value="{{ $travelAuthorization->bn_price_1 }}" />
+                                        @error('bn_price_1')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
                                             </div>
@@ -209,7 +219,7 @@
                                             </div>
                                         @enderror
                                     </div>
-                                    <div class="col-md-4 mb-3">
+                                    <div class="col-md-3 mb-3">
                                         <label for="bn_name_2" class="form-label">Nama BN</label>
                                         <input type="text" class="form-control @error('bn_name_2') is-invalid @enderror"
                                             id="bn_name_2" name="bn_name_2" value="{{ $travelAuthorization->bn_name_2 }}" />
@@ -239,11 +249,21 @@
                                             </div>
                                         @enderror
                                     </div>
-                                    <div class="col-md-3 mb-3">
+                                    <div class="col-md-2 mb-3">
                                         <label for="passport_2" class="form-label">Passport</label>
                                         <input type="text" class="form-control @error('passport_2') is-invalid @enderror"
                                             id="passport_2" name="passport_2" value="{{ $travelAuthorization->passport_2 }}" />
                                         @error('passport_2')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                    <div class="col-md-2 mb-3">
+                                        <label for="bn_price_2" class="form-label">Total BN</label>
+                                        <input type="number" class="form-control @error('bn_price_2') is-invalid @enderror"
+                                            id="bn_price_2" name="bn_price_2" value="{{ $travelAuthorization->bn_price_2 }}" />
+                                        @error('bn_price_2')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
                                             </div>
@@ -261,7 +281,7 @@
                                             </div>
                                         @enderror
                                     </div>
-                                    <div class="col-md-4 mb-3">
+                                    <div class="col-md-3 mb-3">
                                         <label for="bn_name_3" class="form-label">Nama BN</label>
                                         <input type="text" class="form-control @error('bn_name_3') is-invalid @enderror"
                                             id="bn_name_3" name="bn_name_3" value="{{ $travelAuthorization->bn_name_3 }}" />
@@ -291,11 +311,21 @@
                                             </div>
                                         @enderror
                                     </div>
-                                    <div class="col-md-3 mb-3">
+                                    <div class="col-md-2 mb-3">
                                         <label for="passport_3" class="form-label">Passport</label>
                                         <input type="text" class="form-control @error('passport_3') is-invalid @enderror"
                                             id="passport_3" name="passport_3" value="{{ $travelAuthorization->passport_3 }}" />
                                         @error('passport_3')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                    <div class="col-md-2 mb-3">
+                                        <label for="bn_price_3" class="form-label">Total BN</label>
+                                        <input type="number" class="form-control @error('bn_price_3') is-invalid @enderror"
+                                            id="bn_price_3" name="bn_price_3" value="{{ $travelAuthorization->bn_price_3 }}" />
+                                        @error('bn_price_3')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
                                             </div>
@@ -313,7 +343,7 @@
                                             </div>
                                         @enderror
                                     </div>
-                                    <div class="col-md-4 mb-3">
+                                    <div class="col-md-3 mb-3">
                                         <label for="bn_name_4" class="form-label">Nama BN</label>
                                         <input type="text" class="form-control @error('bn_name_4') is-invalid @enderror"
                                             id="bn_name_4" name="bn_name_4" value="{{ $travelAuthorization->bn_name_4 }}" />
@@ -343,11 +373,21 @@
                                             </div>
                                         @enderror
                                     </div>
-                                    <div class="col-md-3 mb-3">
+                                    <div class="col-md-2 mb-3">
                                         <label for="passport_4" class="form-label">Passport</label>
                                         <input type="text" class="form-control @error('passport_4') is-invalid @enderror"
                                             id="passport_4" name="passport_4" value="{{ $travelAuthorization->passport_4 }}" />
                                         @error('passport_4')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                    <div class="col-md-2 mb-3">
+                                        <label for="bn_price_4" class="form-label">Total BN</label>
+                                        <input type="number" class="form-control @error('bn_price_4') is-invalid @enderror"
+                                            id="bn_price_4" name="bn_price_4" value="{{ $travelAuthorization->bn_price_4 }}" />
+                                        @error('bn_price_4')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
                                             </div>
