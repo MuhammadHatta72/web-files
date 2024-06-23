@@ -1,37 +1,33 @@
-@extends("layouts.app")
+@extends('layouts.app')
 
-@section("title", "Dashboard Admin")
+@section('title', 'Dashboard Admin')
 
-@section("sidebar")
-    @include("layouts.sidebar_admin")
+@section('sidebar')
+    @include('layouts.sidebar_admin')
 @endsection
 
-@section("content")
+@section('content')
     <section class="section">
         <div class="section-header">
             <h1>Selamat Datang! {{ auth()->user()->admin->nama }}</h1>
         </div>
 
-        @php
-            if (\Illuminate\Support\Facades\Hash::check("password", auth()->user()->password)) {
-                echo "<script>
-                    Swal.fire({
-                            icon: 'warning',
-                            title: 'Peringatan',
-                            text: 'Silahkan ubah password anda terlebih dahulu',
-                            showCancelButton: true, // Menampilkan tombol batal
-                            confirmButtonText: 'Ubah Password Sekarang', // Label tombol konfirmasi
-                            cancelButtonText: 'Ubah Nanti', // Label tombol batal
-                        })
-                        .then((result) => {
-                            if (result.isConfirmed) {
-                                // Redirect ke rute profil untuk mengubah password
-                                window.location.href = '" . route('profile.edit') . "';
-                            }
-                        });
-                </script>";
-            }
-        @endphp
+        @if (session('password_warning'))
+            <script>
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Peringatan',
+                    text: 'Silahkan ubah password anda terlebih dahulu',
+                    showCancelButton: true,
+                    confirmButtonText: 'Ubah Password Sekarang',
+                    cancelButtonText: 'Ubah Nanti',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = '{{ route('profile.edit') }}';
+                    }
+                });
+            </script>
+        @endif
 
         <div class="section-body">
             <div class="row">
@@ -40,7 +36,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-8 col-xl-4 mb-4">
+                <div class="col-lg-12 col-xl-3 mb-4">
                     <div class="card bg-warning text-white">
                         <div class="card-body py-3">
                             <div class="d-flex justify-content-between align-items-center">
@@ -61,7 +57,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-8 col-xl-4 mb-4">
+                <div class="col-lg-12 col-xl-3 mb-4">
                     <div class="card bg-info text-white">
                         <div class="card-body py-3">
                             <div class="d-flex justify-content-between align-items-center">
@@ -82,7 +78,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-8 col-xl-4 mb-4">
+                <div class="col-lg-12 col-xl-3 mb-4">
                     <div class="card bg-primary text-white">
                         <div class="card-body py-3">
                             <div class="d-flex justify-content-between align-items-center">
@@ -97,6 +93,27 @@
                         </div>
                         <div class="card-footer py-2 d-flex align-items-center justify-content-between small shadow-dark">
                             <a class="text-white stretched-link" href="{{ route('arsip_advances.index') }}">
+                                <h6>Detail</h6>
+                            </a>
+                            <div class="text-white"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-xl-3 mb-4">
+                    <div class="card bg-success text-white">
+                        <div class="card-body py-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="me-3">
+                                    <div>
+                                        <h5>Travel Authorization</h5>
+                                    </div>
+                                    <div class="h4 font-weight-600 text-white">{{ $count_travel_authorization }}</div>
+                                </div>
+                                <i class="fas fa-envelope-open-text" style="font-size:xx-large"></i>
+                            </div>
+                        </div>
+                        <div class="card-footer py-2 d-flex align-items-center justify-content-between small shadow-dark">
+                            <a class="text-white stretched-link" href="{{ route('travel_authorizations.index') }}">
                                 <h6>Detail</h6>
                             </a>
                             <div class="text-white"><i class="fas fa-angle-right"></i></div>

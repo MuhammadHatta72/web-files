@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="shortcut icon" href="{{ asset('assets/img/logo_polinema.png') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/img/logo-tf.png') }}">
     <title>@yield('title') - Paiton Operation & Maintenance Indonesia</title>
 
     <!-- General CSS Files -->

@@ -13,6 +13,6 @@
             <a href="#service" class="nav-item nav-link">Service</a>
             <a href="#blog" class="nav-item nav-link">Blog</a>
         </div>
-        <a href="{{ url('login') }}" class="btn btn-primary py-2 px-4 ms-3">LOGIN</a>
+        <a href="{{ url('login') }}" class="btn btn-info py-2 px-4 ms-3">LOGIN</a>
     </div>
 </nav>

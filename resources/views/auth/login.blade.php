@@ -7,7 +7,7 @@
         <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
             <div class="login-brand">
                 <a href="/">
-                    <img src="{{ asset('assets/img/logo_polinema.png') }}" alt="logo" width="100" class="circle">
+                    <img src="{{ asset('assets/img/logo-tf.png') }}" alt="logo" width="300" class="circle">
                 </a>
             </div>
 
@@ -22,14 +22,14 @@
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input id="email" type="email"
-                                   class="form-control @error('email')
+                                class="form-control @error('email')
                             is-invalid
                             @enderror"
-                                   name="email" tabindex="1" required>
+                                name="email" tabindex="1" required>
                             @error('email')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
                             @enderror
                         </div>
 
@@ -44,8 +44,8 @@
                             </div>
                             <div class="d-flex align-items-center justify-content-end">
                                 <input id="password" type="password"
-                                       class="form-control @error('password') is-invalid @enderror" name="password"
-                                       tabindex="2" required>
+                                    class="form-control @error('password') is-invalid @enderror" name="password"
+                                    tabindex="2" required>
                                 <span class="position-absolute px-1">
                                     <button class="eye btn border-0" type="button" onclick="showPW()">
                                         <i class="fas fa-eye fs-6"></i>
@@ -56,9 +56,9 @@
                                 </span>
                             </div>
                             @error('password')
-                            <div class="invalid-feedback d-inline-flex">
-                                {{ $message }}
-                            </div>
+                                <div class="invalid-feedback d-inline-flex">
+                                    {{ $message }}
+                                </div>
                             @enderror
                         </div>
 
@@ -74,9 +74,8 @@
             {{--                Don't have an account? <a href="{{ route('register') }}">Create One</a> --}}
             {{--            </div> --}}
             <div class="simple-footer">
-                Copyright &copy; 2023
+                Copyright &copy; 2024
                 <div class="bullet"></div>
-                Developed By <a href="">Akuntansi Polinema</a>
             </div>
         </div>
     </div>
